@@ -27,10 +27,10 @@ $con = new Conexion();
 if ($con->getConexion() != null) {
   // echo "Conexión exitosa";
 
-  // Consulta para obtener datos 
-  // $pps = $con->getConexion()->prepare("SELECT * FROM USUARIO_APLICATIVO");
+  // Prueba de testeo de conexion: Consulta para obtener datos de usuarios
+  // $pps = $con->getConexion()->prepare("SELECT * FROM USUARIO");
   // $pps -> execute();
-  // echo json_encode(['USUARIO_APLICATIVO'=>$pps->fetchAll(PDO::FETCH_ASSOC)]);
+  // echo json_encode(['USUARIO'=>$pps->fetchAll(PDO::FETCH_ASSOC)]);
 
 } else {
   echo "Error al conectarse a la base de datos";

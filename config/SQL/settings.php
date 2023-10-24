@@ -9,7 +9,7 @@ define("PASSWORD", "S0p0rt3");
 // define("PASSWORD", "sql");
 
 // Nombre de la base de datos
-define("DATABASE", "prueba_incidencia");
+define("DATABASE", "INCIDENCIAS");
 
 // Dirección del servidor de la base de datos
 // define("SERVIDOR", "JHONATANMM");
