@@ -58,13 +58,6 @@ END;
 GO
 
 IF( EXISTS ( SELECT 1 FROM sys.sysobjects 
-	WHERE name='ROL_USUARIO' and xtype = 'u') )
-BEGIN
-	DROP TABLE dbo.CURSO;
-END;
-GO
-
-IF( EXISTS ( SELECT 1 FROM sys.sysobjects 
 	WHERE name='AREA' and xtype = 'u') )
 BEGIN
 	DROP TABLE dbo.CURSO;
@@ -93,13 +86,6 @@ END;
 GO
 
 IF( EXISTS ( SELECT 1 FROM sys.sysobjects 
-	WHERE name='ESCALA' and xtype = 'u') )
-BEGIN
-	DROP TABLE dbo.ESCALA;
-END;
-GO
-
-IF( EXISTS ( SELECT 1 FROM sys.sysobjects 
 	WHERE name='CIERRE' and xtype = 'u') )
 BEGIN
 	DROP TABLE dbo.ALUMNO;
@@ -120,7 +106,6 @@ GO
 
 INSERT INTO dbo.ESTADO(EST_nombre) VALUES ('Activo');
 INSERT INTO dbo.ESTADO(EST_nombre) VALUES ('Inactivo');
-INSERT INTO dbo.ESTADO(EST_nombre) VALUES ('Abierto');
 INSERT INTO dbo.ESTADO(EST_nombre) VALUES ('Cerrado');
 
 CREATE TABLE dbo.ROL
@@ -151,9 +136,9 @@ CREATE TABLE dbo.PERSONA
 GO
 
 INSERT INTO dbo.PERSONA(PER_dni,PER_nombres,PER_apellidoPaterno,PER_apellidoMaterno,PER_celular,PER_email) VALUES
-('70555740','Jhonatan','Mantilla','Mi馻no', '950212903','jhonatanmm.1995@gmail.com');
+('70555740','Jhonatan','Mantilla','Mi帽ano', '950212903','jhonatanmm.1995@gmail.com');
 INSERT INTO dbo.PERSONA(PER_dni,PER_nombres,PER_apellidoPaterno,PER_apellidoMaterno,PER_celular,PER_email) VALUES
-('70555742','Gustavo','Mantilla','Mi馻no', '950212913','gammgush@gmail.com');
+('70555742','Gustavo','Mantilla','Mi帽ano', '950212913','gammgush@gmail.com');
 
 
 CREATE TABLE dbo.USUARIO
@@ -199,8 +184,8 @@ INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Abastecimientos y Contr
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Unidad de Control Patrimonial');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Caja General');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Gerencia de Recursos Humanos');
-INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Gerencia de Desarrollo Econ騧ico Local');
-INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Area de Liquidaci騨 de Obras');
+INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Gerencia de Desarrollo Econ貌mico Local');
+INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Area de Liquidaci貌n de Obras');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Habilitaciones Urbanas y Catrasto');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Escalafon');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Secretaria General');
@@ -226,23 +211,23 @@ INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Gerencia de Desarrollo Urbano');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Ejecutoria Coactiva');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Estudios y Proyectos');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Obras');
-INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Procuradur韆 P鷅lica Municipal');
+INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Procuradur铆a P煤blica Municipal');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Gerencia de Administracion y Finanzas');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Defensa Civil');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Juventud, Deporte y Cultura');
-INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de 羠eas Verdes');
+INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de 脕reas Verdes');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Seguridad Ciudadana');
-INSERT INTO dbo.AREA(ARE_nombre) VALUES ('觬gano de Control Institucional');
+INSERT INTO dbo.AREA(ARE_nombre) VALUES ('脫rgano de Control Institucional');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Unidad Local de Empadronamiento (ULE)');
-INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Unidad de Atenci髇 al Usuario y Tr醡ite Documentario');
+INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Unidad de Atenci贸n al Usuario y Tr谩mite Documentario');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Gerencia de Seguridad Ciudadana');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Aabstecimiento');
-INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Participaci髇 Vecinal');
-INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Gerencia De Planeamiento, Presupuesto Y Modernizaci髇');
+INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Participaci贸n Vecinal');
+INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Gerencia De Planeamiento, Presupuesto Y Modernizaci贸n');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Transporte');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Archivo Central');
-INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Equipo Mec醤ico y Maestranza');
-INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Limpieza P鷅lica');
+INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Equipo Mec谩nico y Maestranza');
+INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Subgerencia de Limpieza P煤blica');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Bienestar social');
 INSERT INTO dbo.AREA(ARE_nombre) VALUES ('Orientacion Tributaria');
 
@@ -269,7 +254,7 @@ CREATE TABLE dbo.CATEGORIA
 GO
 
 INSERT INTO dbo.CATEGORIA (CAT_nombre) VALUES ('Red inaccesible');
-INSERT INTO dbo.CATEGORIA (CAT_nombre) VALUES ('Asistencia t閏nica');
+INSERT INTO dbo.CATEGORIA (CAT_nombre) VALUES ('Asistencia t茅cnica');
 INSERT INTO dbo.CATEGORIA (CAT_nombre) VALUES ('Generacion de usuario');
 INSERT INTO dbo.CATEGORIA (CAT_nombre) VALUES ('Fallo de equipo de computo');
 INSERT INTO dbo.CATEGORIA (CAT_nombre) VALUES ('Inaccesibilidad a Impresora');
@@ -311,14 +296,6 @@ CREATE TABLE dbo.INCIDENCIA
 )
 GO
 
-CREATE TABLE dbo.ESCALA
-(
-	ESC_codigo INT IDENTITY(1,1),
-	ESC_nombre VARCHAR(20) NOT NULL,
-	CONSTRAINT pk_ESCALA PRIMARY KEY (ESC_codigo)
-);
-GO
-
 CREATE TABLE dbo.CIERRE
 (
 	CIE_codigo INT IDENTITY(1,1),
@@ -327,19 +304,191 @@ CREATE TABLE dbo.CIERRE
 	CIE_documento VARCHAR(500) NOT NULL,
 	USU_codigo INT NOT NULL,
 	INC_codigo INT NOT NULL,
-	ESC_codigo INT NULL,
 	CIE_asunto VARCHAR(200) NOT NULL,
 	CONSTRAINT pk_CIE_codigo PRIMARY KEY (CIE_codigo),
 	CONSTRAINT fk_CIERRE_USUARIO FOREIGN KEY (USU_codigo)
 	REFERENCES dbo.USUARIO (USU_codigo),
-	CONSTRAINT fk_CIERRE_ESCALA FOREIGN KEY (ESC_codigo)
-	REFERENCES dbo.ESCALA(ESC_codigo),
 	CONSTRAINT fk_CIERRE_INCIDENCIA FOREIGN KEY (INC_codigo)
 	REFERENCES dbo.INCIDENCIA (INC_codigo)
-
 );
 GO
 
+-- ======================================================
+-- VISTAS
+-- ======================================================
 
+CREATE VIEW v_listarUsuarios AS
+SELECT 
+	USU_codigo AS codigo,
+	USU_usuario AS usuario,
+	USU_password AS contrasena,
+	(PER_nombres + ' ' + PER_apellidoPaterno) AS Nombre,
+	ROL_nombre AS rol,
+	EST_nombre AS estado
+	FROM USUARIO U
+	INNER JOIN PERSONA P on P.PER_codigo = U.PER_codigo
+	INNER JOIN ROL R on R.ROL_codigo = U.ROL_codigo
+	INNER JOIN ESTADO E ON E.EST_codigo = U.USU_estado
+GO
 
+-- ======================================================
+-- PROCEDIMIENTOS ALMACENADOS
+-- ======================================================
 
+-- Verificar si existe el procedimiento almacenado y eliminarlo si es necesario
+IF OBJECT_ID('usp_PER_registrarPersona', 'P') IS NOT NULL
+    DROP PROCEDURE usp_PER_registrarPersona;
+GO
+
+-- Crear el procedimiento almacenado en SQL Server
+CREATE PROCEDURE usp_PER_registrarPersona
+    @dniParam CHAR(8),
+	@nombresParam VARCHAR(20),
+    @apellidoPaternoParam VARCHAR(20),
+    @apellidoMaternoParam VARCHAR(20),
+    @celularParam CHAR(9),
+    @emailParam VARCHAR(45),
+    @usernameParam VARCHAR(15),
+    @contrasenaParam VARCHAR(15),
+	@rolParam INT
+AS
+BEGIN
+    DECLARE @personaId INT;
+    BEGIN TRY
+        BEGIN TRANSACTION; -- Iniciar la transacci贸n
+
+        -- Insertar la persona y obtener su ID
+        INSERT INTO persona (PER_dni, PER_apellidoPaterno, PER_apellidoMaterno, PER_nombres, PER_email, PER_celular)
+        VALUES (@dniParam, @apellidoPaternoParam, @apellidoMaternoParam, @nombresParam, @emailParam, @celularParam);
+        
+        -- Obtener el ID de la persona reci茅n insertada
+        SET @personaId = SCOPE_IDENTITY();
+
+        -- Insertar el usuario asociado a la persona 
+        INSERT INTO usuario (USU_usuario, USU_password, USU_estado, PER_codigo, ROL_codigo)
+        VALUES (@usernameParam, @contrasenaParam,1, @personaId, @rolParam);
+        
+        -- Confirmar la transacci贸n
+        COMMIT;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK; -- En caso de error, revertir la transacci贸n
+        THROW; -- Propagar el error
+    END CATCH;
+END;
+GO
+
+/*EXEC usp_PER_registrarPersona
+	@dniParam ='18104761',
+	@nombresParam = 'Liliana',
+	@apellidoPaternoParam = 'Marcelo',
+	@apellidoMaternoParam = 'Mi帽ano',
+    @celularParam = '987654431',
+    @emailParam = 'liliannamacelo@gmail.com',
+    @usernameParam = 'LMP96',
+    @contrasenaParam = '123456',
+	@rolParam = 2;
+*/
+
+/* procedimiento almacenado para actualizar datos de las personas*/
+IF OBJECT_ID('usp_PER_actualizarPersona', 'P') IS NOT NULL
+    DROP PROCEDURE usp_PER_actualizarPersona;
+GO
+
+-- Crear el procedimiento almacenado en SQL Server
+CREATE PROCEDURE usp_PER_actualizarPersona
+    @dniParam CHAR(8),
+	@nombresParam VARCHAR(20),
+    @apellidoPaternoParam VARCHAR(20),
+    @apellidoMaternoParam VARCHAR(20),
+    @celularParam CHAR(9),
+    @emailParam VARCHAR(45),
+	@codigoParam INT
+AS
+BEGIN
+    DECLARE @personaId INT;
+    BEGIN TRY
+        BEGIN TRANSACTION; -- Iniciar la transacci贸n
+
+        -- Actualizar la persona 
+		UPDATE dbo.PERSONA SET
+			PER_dni = @dniParam,
+			PER_apellidoPaterno = @apellidoPaternoParam,
+			PER_apellidoMaterno = @apellidoMaternoParam,
+			PER_nombres = @nombresParam,
+			PER_celular = @celularParam,
+			PER_email = @emailParam
+		WHERE PER_codigo = @codigoParam;
+        
+        -- Confirmar la transacci贸n
+        COMMIT;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK; -- En caso de error, revertir la transacci贸n
+        THROW; -- Propagar el error
+    END CATCH;
+END;
+GO
+
+/*SELECT * FROM PERSONA;
+EXEC usp_PER_actualizarPersona 
+	@dniParam = '70555743',
+	@apellidoPaternoParam = 'Mantilla',
+	@apellidoMaternoParam = 'Marcelo',
+	@nombresParam = 'Liliana Patricia',
+	@celularParam = '998877665',
+	@emailParam = 'lmarcelom@unitru.edu.pe',
+	@codigoParam = 5
+*/
+
+-- Procedimiento almacenado para registrar incidencia
+
+-- Verificar si existe el procedimiento almacenado y eliminarlo si es necesario
+IF OBJECT_ID('usp_INC_registrarIncidencia', 'P') IS NOT NULL
+    DROP PROCEDURE usp_INC_registrarIncidencia;
+GO
+
+-- Crear el procedimiento almacenado en SQL Server
+CREATE PROCEDURE usp_INC_registrarIncidencia
+    @fechaParam DATE,
+	@asuntoParam VARCHAR(200),
+    @codigoPatrimonialParam VARCHAR(50),
+    @documentoParam VARCHAR(100),
+    @estadoParam INT,
+    @categoriaParam VARCHAR(45),
+    @prioridadParam VARCHAR(15),
+    @areaParam VARCHAR(15),
+	@usuarioParam INT,
+	@observacionParam VARCHAR(500)
+AS
+BEGIN
+    BEGIN TRY
+        BEGIN TRANSACTION; -- Iniciar la transacci贸n
+        -- Insertar incidencia
+        INSERT INTO dbo.INCIDENCIA (INC_fecha,INC_asunto,INC_codigoPatrimonial,INC_documento,INC_estado,CAT_codigo,PRI_codigo,ARE_codigo,USU_codigo,INC_observacion)
+        VALUES (@fechaParam,@asuntoParam,@codigoPatrimonialParam,@documentoParam,@estadoParam,@categoriaParam,@prioridadParam,@areaParam,@usuarioParam,@observacionParam); 
+        -- Confirmar la transacci贸n
+        COMMIT;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK; -- En caso de error, revertir la transacci贸n
+        THROW; -- Propagar el error
+    END CATCH;
+END;
+GO
+
+/*EXEC usp_INC_registrarIncidencia
+	@fechaParam = '2023-10-26',
+	@asuntoParam = 'PC no enciende',
+    @codigoPatrimonialParam = '956541696399',
+    @documentoParam = 'ANEXO 3',
+    @estadoParam = 1,
+    @categoriaParam = 3,
+    @prioridadParam = 2,
+    @areaParam = 1,
+	@usuarioParam = 2,
+	@observacionParam = 'enciende un rato y luego se apaga';
+*/
