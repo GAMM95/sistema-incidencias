@@ -492,3 +492,17 @@ GO
 	@usuarioParam = 2,
 	@observacionParam = 'enciende un rato y luego se apaga';
 */
+
+CREATE PROCEDURE dbo.SP_Usuario_login
+    @USU_usuario VARCHAR(15),
+    @USU_password VARCHAR(10)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT u.USU_usuario, u.USU_password, p.PER_nombres
+    FROM USUARIO u
+        INNER JOIN PERSONA p ON p.PER_codigo = u.PER_codigo
+    WHERE u.USU_usuario = @USU_usuario AND u.USU_password = @USU_password;
+END;
+GO

@@ -1,0 +1,229 @@
+/* Estilos para la página de inicio de sesión */
+.loginPage {
+  /*Configuracionesgeneralesdelcontenedordelapágina*/
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  /* box-shadow: 2px 2px 8px var(--greyText); */
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+/* Estilos para el contenedor principal del login */
+.container-login {
+  /*Configuracionesdelcontenedordelogin*/
+  height: 75vh;
+  width: 60%;
+  margin: auto;
+  justify-content: space-between;
+  border-radius: 1rem;
+  background: hsl(0, 0%, 91%);
+  box-shadow: 2px 2px 8px var(--greyText);
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+/* Estilos para el panel de video */
+.videoDiv {
+  /* Configuraciones del panel de video */
+  position: relative;
+  display: flex;
+  flex-basis: 50%;
+  width: 70%;
+  height: 100%;
+  padding: 0 1.5rem;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Estilos para los botones del pie de página */
+.btn-footer {
+  /* Configuraciones del botón en el pie de página */
+  background: var(--whiteColor);
+  color: var(--primaryColor);
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 400;
+  transition: 0.3s ease;
+}
+
+/* Cambio de color en el botón del pie de página al pasar el mouse */
+.btn-footer:hover {
+  background: var(--hoverColor);
+  color: var(--blackColor);
+}
+
+/* Estilos para los videos y el footer */
+video,
+.footerDiv {
+  position: absolute;
+}
+
+/* Estilos para los videos de login y registro */
+.videoLogin {
+  /* Configuraciones de los videos de fondo */
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+/* Estilos para el texto descriptivo */
+.textDiv {
+  position: relative;
+}
+
+/* Estilos para el título */
+.titulo {
+  color: var(--whiteColor);
+  font-size: 35px;
+  font-weight: 800;
+}
+
+/* Estilos para los párrafos */
+p {
+  color: var(--whiteColor);
+  padding: 1rem;
+  font-weight: 400;
+}
+
+/* Estilos para el footer */
+.footerDiv {
+  /* Configuraciones del footer */
+  bottom: 10px;
+  padding: 0 1rem;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.248);
+  left: 10px;
+  right: 10px;
+  justify-content: space-between;
+  backdrop-filter: blur(1px);
+  border-radius: 10px;
+}
+
+/* Estilos para el texto */
+.text {
+  color: var(--whiteColor);
+}
+
+/* Estilos para el formulario de login */
+.formDiv {
+  /* Configuraciones del formulario */
+  flex-basis: 50%;
+  margin: auto;
+  flex-direction: column;
+  gap: 0.25rem;
+  /* transform: translate(-1rem); */
+}
+
+/* Estilos para el encabezado y el logo */
+.headerDiv {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* Estilos para la imagen de logo */
+.img_logo_login {
+  width: 30%;
+  padding-bottom: 0.125rem;
+}
+
+/* Estilos para la imagen de registro */
+.imgRegistro {
+  width: 20%;
+  padding-bottom: 0.125rem;
+}
+
+/* Estilos para el título del formulario */
+h3 {
+  font-size: 25px;
+  color: var(--blackColor);
+  font-weight: 600;
+}
+
+/* Estilos para el formulario */
+.form {
+  gap: 1rem;
+  margin: 0 2rem;
+}
+
+/* Estilos para el icono en los campos de entrada */
+.inputDiv .icon {
+  color: var(--greyText);
+}
+
+/* Estilos para los campos de entrada */
+input {
+  background: none;
+  outline: none;
+  border: none;
+  width: 250px;
+}
+
+/* Estilos para las etiquetas de los campos */
+label {
+  color: var(--blackColor);
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0.5rem 0;
+  display: block;
+}
+
+/* Estilos para el contenedor de los campos de entrada */
+.input {
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--inputColor);
+  border-radius: 10px;
+}
+
+/* Estilos para el botón de inicio de sesión */
+.btn-form {
+  /* Configuraciones del botón de inicio de sesión */
+  padding: 0.8rem;
+  background: var(--primaryColor);
+  border-radius: 10px;
+  color: var(--whiteColor);
+  align-items: center;
+  margin: auto;
+  padding: 0.8rem 1.5rem;
+  justify-content: center;
+  font-weight: 400;
+  transition: 0.3s ease;
+}
+
+/* Cambio de color en el botón de inicio de sesión al pasar el mouse */
+.btn-form:hover {
+  background: var(--hoverColor);
+  color: var(--blackColor);
+}
+
+/* Estilos para el icono en los campos de entrada */
+.icon-input {
+  font-size: 25px;
+  transition: 0.3s ease;
+  cursor: auto;
+}
+
+/* Estilos para el mensaje de mostrar estado de logeo */
+.mostrarMensaje {
+  display: block;
+  color: var(--whiteColor);
+  padding: 10px;
+  background: rgb(255, 0, 0);
+  border-radius: 3px;
+  text-align: center;
+}

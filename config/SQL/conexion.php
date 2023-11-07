@@ -28,9 +28,9 @@ if ($con->getConexion() != null) {
   // echo "Conexión exitosa";
 
   // Prueba de testeo de conexion: Consulta para obtener datos de usuarios
-  $pps = $con->getConexion()->prepare("SELECT * FROM USUARIO");
-  $pps -> execute();
-  echo json_encode(['USUARIO'=>$pps->fetchAll(PDO::FETCH_ASSOC)]);
+  // $pps = $con->getConexion()->prepare("SELECT * FROM USUARIO");
+  // $pps -> execute();
+  // echo json_encode(['USUARIO'=>$pps->fetchAll(PDO::FETCH_ASSOC)]);
 
 } else {
   echo "Error al conectarse a la base de datos";
