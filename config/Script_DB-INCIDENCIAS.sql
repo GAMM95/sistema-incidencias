@@ -139,6 +139,8 @@ INSERT INTO dbo.PERSONA(PER_dni,PER_nombres,PER_apellidoPaterno,PER_apellidoMate
 ('70555740','Jhonatan','Mantilla','Miñano', '950212903','jhonatanmm.1995@gmail.com');
 INSERT INTO dbo.PERSONA(PER_dni,PER_nombres,PER_apellidoPaterno,PER_apellidoMaterno,PER_celular,PER_email) VALUES
 ('70555742','Gustavo','Mantilla','Miñano', '950212913','gammgush@gmail.com');
+INSERT INTO dbo.PERSONA(PER_dni,PER_nombres,PER_apellidoPaterno,PER_apellidoMaterno,PER_celular,PER_email) VALUES
+('98765423','Maria','Blas','Vera', '975168936','mblasv@gmail.com');
 
 
 CREATE TABLE dbo.USUARIO
@@ -164,6 +166,8 @@ GO
 
 INSERT INTO dbo.USUARIO(USU_usuario,USU_password,USU_estado,PER_codigo,ROL_codigo) VALUES ('GAMM95','123456',1,1,1);
 INSERT INTO dbo.USUARIO(USU_usuario,USU_password,USU_estado,PER_codigo,ROL_codigo) VALUES ('GUSH98','123456',1,2,2);
+INSERT INTO dbo.USUARIO(USU_usuario,USU_password,USU_estado,PER_codigo,ROL_codigo) VALUES ('admin','123456',1,2,1);
+INSERT INTO dbo.USUARIO(USU_usuario,USU_password,USU_estado,PER_codigo,ROL_codigo) VALUES ('user','123456',1,2,2);
 
 CREATE TABLE dbo.AREA
 (
