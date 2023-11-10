@@ -6,6 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="public/assets/logo.ico">
+
+  <!-- Importación de librería jQuery -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
   <!-- Agrega las hojas de estilo de Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <!-- Agrega la fuente Poppins desde Google Fonts -->
@@ -21,10 +27,20 @@
   <!-- Contenedor principal de la página de inicio de sesión -->
   <div class="flex justify-center items-center h-screen">
     <div class="container-login bg-white p-5 rounded-3xl shadow-lg flex w-full max-w-screen-lg mr-2 ml-2">
-      <!-- Panel de video -->
+      <!-- Panel de logo MDE -->
       <div class="w-1/2 relative hidden md:block">
-      <img src="public/assets/image.png" alt="imagen de mde" class="img_logo_login mx-auto max-w-xs m-6 p-6">
+        <img src="public/assets/image.png" alt="imagen de mde" class="img_logo_login mx-auto max-w-xs m-6 p-6">
       </div>
+
+      <!-- Verificación del estado para mostrar mensajes de error -->
+      <?php
+      $state = $_GET['state'] ?? '';
+      if ($state === 'failed') {
+        echo "<script>
+            toastr.error('Credenciales incorrectas.', 'Inicio de sesion fallido.');
+            </script>";
+      }
+      ?>
 
       <!-- Panel del formulario -->
       <div class="formDiv w-full md:w-1/2 p-4 justify-center items-center mx-auto">

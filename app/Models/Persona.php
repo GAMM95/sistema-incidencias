@@ -1,7 +1,7 @@
 <?php
 require_once 'config/SQL/conexion.php';
 
-class Incidencia{
+class Persona{
   private $conector;
 
   public function __construct($conector)

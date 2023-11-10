@@ -5,14 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Enlaces a las hojas de estilo -->
-  <link rel="stylesheet" href="./public/styles/appMenu.css">
-  <link rel="stylesheet" href="./public/styles/partials/body.css">
-  <link rel="stylesheet" href="./public/styles/inicio.css">
-
   <!-- Importacion de iconos -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <title>Consulta Transportes</title>
+  <title>Gestion de Incidencias</title>
 </head>
 
 <body>
@@ -24,51 +19,95 @@
     include("app/Views/Partials/header.php");
     ?>
 
-    <!-- <section class="inicio"> -->
-    <div class="inicio_content">
+    <section class="home">
+      <div class="text">REGISTRAR INCIDENCIA
+      </div>
+      <div class="registrar_incidencia">
+        <form action="#" method="POST">
+          <div class="form first">
+            <div class="details registrarincidencia">
 
-      <div class="sectionCard">
+              <div class="fields">
+                <div class="input-field">
+                  <label>Categoria</label>
+                  <select required name="categoria" class="form-control">
+                    <option disabled selected>Selectionar Categoria</option>
+                    <?php
+                    include("funciones/buscarCategoria.php");
+                    ?>
+                  </select>
+                </div>
+                <div class="input-field">
+                  <label>LOCAL</label>
+                  <select required name="local" id="id_local" class="form-control" onchange="recargarLista(this.value);">
+                    <option disabled selected>Selectionar Local</option>
+                    <?php
+                    include("funciones/buscarLocal.php");
+                    ?>
+                  </select>
+                </div>
 
-        <!-- Card de Asociaciones -->
-        <div class="card grid_Card">
-          <div class="logoCard">
-            <img src="./public/assets/asociaciones.png" class="imgCardLogo" alt="Imagen de la tarjeta">
+                <div class="input-field">
+                  <label>AREA</label>
+                  <select id='select2lista' name="area">
+                    <option disabled selected>Selectionar Area</option>
+                  </select>
+                </div>
+
+                <div class="input-field">
+                  <label>PRIORIDAD</label>
+                  <select required name="prioridad" class="form-control">
+                    <option disabled selected>Selectionar Prioridad</option>
+                    <?php
+                    include("funciones/buscarPrioridad.php");
+                    ?>
+                  </select>
+                </div>
+
+                <div class="input-field">
+                  <label>Fecha</label>
+                  <input type="datetime-local" name="fecha" placeholder="Ingrese la Fecha" required>
+                </div>
+
+
+                <div class="input-field">
+                  <label>Estado</label>
+                  <select name="estado" required>
+                    <option selected value="Activo">Activo</option>
+                  </select>
+                </div>
+
+                <div class="input-field">
+                  <label>Codigo Patrimonial de Equipo</label>
+                  <input type="text" name="equipo" placeholder="Ingresar Codigo Patrimonial" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="Asunto ID">
+
+              <div class="fields">
+                <div class="input-field1">
+                  <label>Asunto</label>
+                  <input type="text" name="asunto" placeholder="Ingresar el Asunto" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="Documento ID">
+              <div class="fields">
+                <div class="input-field1">
+                  <label>Documento</label>
+                  <input type="text" name="documento" placeholder="Ingresar Nombre del Documento" required>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <!-- Cantidad Asociaciones -->
-          <h2 class="tituloReporte">Asociaciones</h2>
-          <p class="cantidad_total">
-            <?php echo $cantidadAsociaciones; ?>
-          </p>
-          <!-- <a href="#">Leer más</a> -->
-        </div>
-
-        <!-- Card de Mototaxis -->
-        <div class="card grid_Card">
-          <div class="logoCard">
-            <img src="./public/assets/mototaxi.png" class="imgCardLogo" alt="Imagen de la tarjeta">
-          </div>
-          <!-- Cantidad Unidades -->
-          <h2 class="tituloReporte">Unidades</h2>
-          <p class="cantidad_total">
-            <?php echo $cantidadUnidades; ?>
-          </p>
-        </div>
-
-        <!-- Card de Papeletas Sin Pagar -->
-        <div class="card grid_Card">
-          <div class="logoCard">
-            <img src="./public/assets/papeleta.png" class="imgCardLogo" alt="Imagen de la tarjeta">
-          </div>
-          <!-- Cantidad Papeletas Sin Pagar -->
-          <h2 class="tituloReporte">Papeletas Sin Pagar</h2>
-          <p class="cantidad_total">
-            <?php echo $cantidadPapeletas; ?>
-          </p>
-        </div>
+        </form>
       </div>
 
-
-    </div>
+    </section>
 
   </div>
 

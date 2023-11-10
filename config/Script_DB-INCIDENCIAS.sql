@@ -504,9 +504,11 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    SELECT u.USU_usuario, u.USU_password, p.PER_nombres
+    SELECT u.USU_usuario, u.USU_password, p.PER_nombres, ROL_nombre
     FROM USUARIO u
         INNER JOIN PERSONA p ON p.PER_codigo = u.PER_codigo
+		INNER JOIN ROL r ON r.ROL_codigo = u.ROL_codigo
     WHERE u.USU_usuario = @USU_usuario AND u.USU_password = @USU_password;
 END;
 GO
+

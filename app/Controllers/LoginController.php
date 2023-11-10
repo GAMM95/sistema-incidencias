@@ -26,14 +26,47 @@ class LoginController
 				// Si el inicio de sesión es exitoso, inicia la sesión y redirige al menú
 				session_start();
 				$_SESSION['username'] = $username;
-				header("Location: inicio.php");
+				header("Location: inicio_admin.php");
 				exit();
+				// if($_SESSION["ROL_nombre"]=="Administrador"){
+				// 	header("Location: inicio_admin.php");
+
+				// }else if($_SESSION["ROL_nombre"]=="Trabajador"){
+				// 	header("Location: inicio_user.php");
+				// 	exit();
+				// }
 			} else {
 				// Si el inicio de sesión falla, muestra un mensaje de error
 				echo "Verifica tus credenciales.";
 				// $_SESSION['login_message'] = 'Inicio de sesión fallido. Verifica tus credenciales.';
 				header("Location: index.php?state=failed");
 			}
+
+			// Intenta iniciar sesión con los datos proporcionados
+			// 	if ($usuario->iniciarSesion()) {
+			// 		// Si el inicio de sesión es exitoso, obtén el rol del usuario
+			// 		$rol = $usuario->obtenerRol(); // Asumiendo que existe un método obtenerRol
+
+			// 		// Define una variable para indicar si es administrador
+			// 		$esAdministrador = false;
+			// 		if ($rol === 'Administrador') {
+			// 			$esAdministrador = true;
+			// 		}
+
+			// 		// Ahora puedes redirigir al usuario y pasar $esAdministrador a la vista
+			// 		session_start();
+			// 		$_SESSION['username'] = $username;
+			// 		$_SESSION['esAdministrador'] = $esAdministrador;
+
+			// 		// Redirige a la página principal (cambiar según tus necesidades)
+			// 		header("Location: inicio_admin.php");
+			// 		exit();
+			// 	} else {
+			// 		// Si el inicio de sesión falla, muestra un mensaje de error
+			// 		echo "Verifica tus credenciales.";
+			// 		// header("Location: index.php?state=failed");
+			// 	}
+			// }
 		}
 	}
 }
